@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f6f8;
+  }
+  
+  /* Top navbar (first row) */
+  .top-navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 30px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .top-navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    margin-left: 20px;
+  }
+  
+  /* Main navbar (second row) */
+  .main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 30px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Logo section */
+  .navbar-left {
+    width: 100px;
+    height: 20px;
+  }
+  
+  .navbar-left svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Center navigation */
+  .navbar-center {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .navbar-center a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  
+  /* Right section with search and icons */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    font-size: 13px;
+    width: 150px;
+  }
+  
+  .icon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+/* ------------------ */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .mobile-menu.desktop-view {
+    width: 30%;
+  }
+  
+  .mobile-menu.mobile-view {
+    width: 95%;
+    box-shadow: none;
+  }
+
+/* ------------------ */
+
+  /* Mobile menu button - initially hidden */
+  .mobile-menu-btn {
+    /* display: none; */
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Mobile nav adjustments */
+  @media screen and (max-width: 992px) {
+    .navbar-center {
+      display: none;
+    }
+    
+    .top-navbar {
+      display: none;
+    }
+    
+    .search-box input {
+      display: none;
+    }
+    
+    .mobile-menu-btn {
+      display: block;
+    }
+    
+    .navbar-right {
+      gap: 20px;
+    }
+  }
+
+  /* -------carousel------- */
+
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    height: auto;
+    /* Will be set via JavaScript */
+    transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.nav-button {
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-button:hover {
+    background-color: #f8f8f8;
+}
+
+@media (max-width: 768px) {
+    .nav-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+/* ---banner--- */
+
+.banner {
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---Youtube-Videos--- */
