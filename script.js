@@ -208,3 +208,23 @@ document.addEventListener('DOMContentLoaded', function() {
     setupInfiniteCarousel();
 });
 });
+
+// Alternating Banner images
+document.addEventListener('DOMContentLoaded', function() {
+    const bannerImages = document.querySelectorAll('.banner-image');
+    let currentImageIndex = 0;
+    
+    function alternateImages() {
+        // Remove active class from all images
+        bannerImages.forEach(img => img.classList.remove('active'));
+        
+        // Move to next image
+        currentImageIndex = (currentImageIndex + 1) % bannerImages.length;
+        
+        // Add active class to current image
+        bannerImages[currentImageIndex].classList.add('active');
+    }
+    
+    // Start alternating images every 3 seconds
+    setInterval(alternateImages, 4000);
+});
