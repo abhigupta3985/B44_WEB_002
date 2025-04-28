@@ -225,6 +225,47 @@ document.addEventListener('DOMContentLoaded', function() {
         bannerImages[currentImageIndex].classList.add('active');
     }
     
-    // Start alternating images every 3 seconds
+    // Start alternating images every 4 seconds
     setInterval(alternateImages, 4000);
+});
+
+// ----footer----
+// Dropdown functionality for mobile footer
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up initial state based on screen size
+    setupDropdowns();
+    
+    // Add click handlers to toggles
+    const toggles = document.querySelectorAll('.dropdown-toggle');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            if (window.innerWidth <= 767) {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                
+                // Toggle display
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            }
+        });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', setupDropdowns);
+    
+    function setupDropdowns() {
+        const toggles = document.querySelectorAll('.dropdown-toggle');
+        const contents = document.querySelectorAll('.dropdown-content');
+        
+        if (window.innerWidth > 767) {
+            toggles.forEach(toggle => toggle.classList.remove('active'));
+            contents.forEach(content => content.style.display = 'block');
+        } else {
+            toggles.forEach(toggle => toggle.classList.remove('active'));
+            contents.forEach(content => content.style.display = 'none');
+        }
+    }
 });

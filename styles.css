@@ -235,7 +235,7 @@ body {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -259,21 +259,171 @@ body {
 .alternating-banner {
     width: 100%;
     position: relative;
-    height: 300px;
-    overflow: hidden;
 }
 
 .banner-image {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     opacity: 0;
+    width: 100%;
+    height: auto;
+    display: block;
     transition: opacity 1s ease-in-out;
 }
 
 .banner-image.active {
     opacity: 1;
+    position: relative; 
+}
+
+
+
+
+
+
+/* -----footer----- */
+.footer {
+  background-color: #f8f9fa;
+  padding:40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: center;
+  /* max-width: 1200px; */
+  margin: 0 auto 30px;
+  padding-left: 50px;
+}
+
+.footer-dropdown {
+  min-width: 150px;
+  margin: 0 20px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 400 ;
+}
+
+.dropdown-content {
+  display: block;
+  color: #666;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.social-media {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  /* max-width: 1200px; */
+  margin: 0 auto 20px;
+  padding-left: 50px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  /* max-width: 1200px; */
+  margin: 0 auto 10px;
+  padding-left: 50px;
+}
+
+.footer-links a {
+  margin-right: 50px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.copyright {
+  /* max-width: 1200px; */
+  margin: 0 auto 20px;
+  padding-left: 50px;
+  font-size: 11px;
+  color: #000000;
+}
+
+.recycling-info {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding-left: 15px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.recycling-info p {
+  margin-bottom: 10px;
+  font-weight: bold ;
+}
+
+.recycling-info a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .footer-top {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 50px;
+  }
+  
+  .footer-dropdown {
+      width: 100%;
+      margin: 0 0 15px 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+  }
+  
+  .dropdown-toggle {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 10px 0;
+
+  }
+
+  .dropdown-toggle::after {
+      content: '';
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+      transform: rotate(45deg);
+      margin-right: 10px;
+  }
+  
+  .dropdown-toggle.active::after {
+      transform: rotate(-135deg);
+  }
+  
+  .dropdown-content {
+      display: none;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-bottom: 5px;
+  }
+  
+  .social-media, .footer-links, .copyright, .recycling-info {
+      padding-left: 20px;
+  }
 }
